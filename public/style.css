@@ -1,22 +1,88 @@
-body {
-  font-family: "Orbitron";
-  background-color: white;
-  margin: 0;
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap");
+
+.btn-group button {
+  background-color: blue; /* Green background */
+  border: 1px solid blue; /* Green border */
+  color: white; /* White text */
+  padding: 20px 30px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  margin: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1em;
 }
 
-div.time {
-  text-align: center;
-  font-size: 150px;
-  position: relative;
-  color: rgb(255, 84, 22);
-  letter-spacing: 2px;
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
 }
 
-div.line {
-  line-height: 1;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: darkblue;
+}
+
+.radio-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5em;
+  color: black;
+}
+
+.status-message {
+  font-family: "Nanum Gothic Coding", Times, serif;
+  font-size: 1.25em;
+  color: green;
+}
+
+.channel-message {
+  font-family: "Nanum Gothic Coding", Times, serif;
+  font-size: 1.25em;
+  color: blue;
+}
+
+h1,
+h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(255, 54, 22);
+}
+
+strong {
+  color: blue;
+}
+
+.reason {
+  text-align: left;
+  white-space: pre-line;
+  color: grey;
+}
+
+/* For pretty-printing JSON */
+.json-pretty {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.json-selected {
+  background-color: rgba(139, 191, 228, 0.19999999999999996);
+}
+
+.json-string {
+  color: #6caedd;
+}
+
+.json-key {
+  color: #ec5f67;
+}
+
+.json-boolean {
+  color: #99c794;
+}
+
+.json-number {
+  color: #99c794;
 }

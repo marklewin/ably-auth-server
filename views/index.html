@@ -1,21 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ably Digital Clock</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Orbitron"
-      rel="stylesheet"
-    />
+    <title>Ably Authentication Test</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.ably.io/lib/ably.min-1.js"></script>
-    <script src="subscribe.js"></script>
   </head>
   <body>
-    <div class="line">
-      <div class="time">
-        <span id="time">ERROR</span>
-        <span id="date">ERROR</span>
-      </div>
+    <h1>Ably PubSub Authentication Demo</h1>
+    <div>
+      <input type="radio" id="basic" name="auth" value="basic" checked />
+      <label for="basic" class="radio-text">Basic Auth</label><br />
+      <input type="radio" id="tokenreq" name="auth" value="tokenreq" />
+      <label for="tokenreq" class="radio-text"
+        >Ably TokenRequest with AuthURL</label
+      ><br />
+      <input type="radio" id="token" name="auth" value="token" />
+      <label for="token" class="radio-text">Ably Token with AuthURL</label
+      ><br />
+      <input type="radio" id="ably-jwt" name="auth" value="ably-jwt" />
+      <label for="ably-jwt" class="radio-text">Ably JWT</label><br />
+      <input
+        type="radio"
+        id="tokenreq-callback"
+        name="auth"
+        value="tokenreq-callback"
+      />
+      <label for="tokenreq-callback" class="radio-text"
+        >TokenRequest with Callback</label
+      ><br />
+      <input
+        type="radio"
+        id="token-callback"
+        name="auth"
+        value="token-callback"
+      />
+      <label for="token-callback" class="radio-text">Token with Callback</label
+      ><br />
+      <input type="radio" id="jwt-callback" name="auth" value="jwt-callback" />
+      <label for="jwt-callback" class="radio-text">JWT with Callback</label
+      ><br />
     </div>
+    <div class="btn-group">
+      <button id="connect">Connect</button>
+      <button id="subscribe">Subscribe</button>
+      <button id="execute">Test</button>
+      <button id="disconnect">Disconnect</button>
+    </div>
+    <div>
+      <p id="statusMessage" class="status-message">Ready</p>
+    </div>
+
+    <div>
+      <h2>Alerts</h2>
+      <p id="alert-message" class="channel-message">EMPTY</p>
+    </div>
+    <div>
+      <h2>Updates</h2>
+      <p id="update-message" class="channel-message">EMPTY</p>
+    </div>
+    <script src="utils.js"></script>
+    <script src="ui.js"></script>
+    <script src="pubsub.js"></script>
+    <script src="auth.js"></script>
   </body>
 </html>
